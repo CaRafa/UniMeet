@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { Editar } from './editar';
+import { Perfil } from './perfil';
 
 @NgModule({
   declarations: [
-    Editar,
+    Perfil,
   ],
   imports: [
-    IonicPageModule.forChild(Editar),
+    IonicPageModule.forChild(Perfil),
   ],
   exports: [
-    Editar
+    Perfil
   ]
 })
-export class EditarModule {}
+export class PerfilModule {}

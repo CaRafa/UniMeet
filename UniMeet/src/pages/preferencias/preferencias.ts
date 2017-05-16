@@ -1,25 +1,24 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {Perfil} from '../perfil/perfil';
-
+import {Editarpref} from '../editarpref/editarpref';
 
 
 @IonicPage()
 @Component({
-  selector: 'page-inicio',
-  templateUrl: 'inicio.html',
+  selector: 'page-preferencias',
+  templateUrl: 'preferencias.html',
 })
-export class Inicio {
+export class Preferencias {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Inicio');
+    console.log('ionViewDidLoad Preferencias');
   }
 
-  IrPerfil(){
-  this.navCtrl.push(Perfil);
+  GoToEditarpref(){
+  this.navCtrl.push(Editarpref);
   }
 
 }

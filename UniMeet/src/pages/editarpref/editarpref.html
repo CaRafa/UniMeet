@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar color="tulip">
+    <ion-title>Preferencias</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+<ion-list>
+<br>
+  <ion-item>
+    <ion-label>Comida</ion-label>
+
+    <ion-select [(ngModel)]="comida" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+    <div *ngFor="let f of food | async">
+    <br>
+    <ion-option>{{ f.Tipo }} </ion-option>
+    </div>
+    </ion-select>
+  </ion-item>
+<br>
+  <ion-item>
+    <ion-label>Música</ion-label>
+
+    <ion-select [(ngModel)]="musica" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+    <div *ngFor="let m of music | async">
+    <br>
+    <ion-option>{{ m.Tipo }} </ion-option>
+    </div>
+    </ion-select>
+  </ion-item>
+
+<br>
+  <ion-item>
+    <ion-label>Películas</ion-label>
+
+    <ion-select [(ngModel)]="peliculas" multiple="true" cancelText="Cancelar" okText="Aceptar!">
+    <div *ngFor="let mv of movies | async">
+    <br>
+    <ion-option>{{ mv.Tipo }} </ion-option>
+    </div>
+    </ion-select>
+  </ion-item>
+
+
+</ion-list>
+
+<ion-row>
+  <ion-col text-center>
+    <button ion-button secondary (click)="GoToAceptar()"> Aceptar </button> 
+  </ion-col>
+</ion-row>
+
+</ion-content>
