@@ -1,0 +1,21 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>¡Meet {{nombreamigo}} :D!</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div  *ngFor = "let u of user | async">
+
+    <h4>Nombre: {{ u.Nombre }}</h4>
+    <h4>Apellido: {{ u.Apellido }}</h4>
+    <h4>Carrera: {{ u.Carrera }}</h4>
+    <h4>Edad: {{ u.Edad }}</h4>
+  </div>
+
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>pag</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+Hola
+
+<ul>
+  <li *ngFor="let item of items | async">
+      {{ item.text }}
+  </li>
+</ul>
+
+<div>
+  <h1>
+    Filter by size
+  </h1>
+  <button ion-button (click)="filterBy('small')">
+    Small
+  </button>
+  <button ion-button (click)="filterBy('medium')">
+    Medium
+  </button>
+  <button ion-button (click)="filterBy('large')">
+    Large
+  </button>
+</div>
+</ion-content>

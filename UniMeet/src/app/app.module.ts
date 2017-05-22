@@ -13,6 +13,10 @@ import { Registro } from '../pages/registro/registro';
 import { Preferencias } from '../pages/preferencias/preferencias';
 import { Editarpref } from '../pages/editarpref/editarpref';
 import { Perfil } from '../pages/perfil/perfil';
+import { Pag } from '../pages/pag/pag';
+import { Buscar } from '../pages/buscar/buscar';
+import {Usuarios} from '../pages/usuarios/usuarios';
+import {Perfilamigo} from '../pages/perfilamigo/perfilamigo';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBsJbp7Vq6QxIY5mXv20sBEecwKKebrJD8",
@@ -32,7 +36,12 @@ export const firebaseConfig = {
     Registro,
     Preferencias,
     Editarpref,
-    Perfil
+    Perfil,
+    Pag,
+    Buscar,
+    Usuarios,
+    Perfilamigo
+
 
   ],
   imports: [
@@ -49,7 +58,11 @@ export const firebaseConfig = {
     Registro,
     Preferencias,
     Editarpref,
-    Perfil
+    Perfil,
+    Pag,
+    Buscar,
+    Usuarios,
+    Perfilamigo
   ],
   providers: [
     StatusBar,

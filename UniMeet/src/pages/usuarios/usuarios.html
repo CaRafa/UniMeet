@@ -1,0 +1,29 @@
+
+<ion-header >
+
+  <ion-navbar color="tulip">
+    <ion-title>{{nombre}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div align="center">
+    <p>¡Chatea con alguno de estos usuarios sobre sus gustos!</p>
+  </div>
+
+  <br>
+<ion-list >
+  <ion-item-sliding *ngFor = "let u of usuario | async"> 
+  <ion-item>
+      <h4>{{u.usuario}}</h4>
+      </ion-item>
+
+       <ion-item-options>
+      <button ion-button (click)="IrAmigo(u)">Ver Perfil</button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+</ion-content>

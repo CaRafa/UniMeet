@@ -1,0 +1,67 @@
+
+<ion-header >
+
+  <ion-navbar color="tulip">
+    <ion-title>Buscar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+Encuentra personas por tu preferencia
+<br>
+<br>
+
+<ion-list>
+  <div>
+    Comida
+    <br>
+  <ion-item-sliding *ngFor="let c of comida | async">
+    <ion-item>
+      <div>
+        {{ c.Tipo }}
+      </div>
+    </ion-item>
+    
+    <ion-item-options>
+      <button ion-button (click)=" buscar(c)">Buscar</button>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  </div>
+
+   <div>
+     <br>
+    Musica
+    <br>
+  <ion-item-sliding *ngFor="let m of musica | async">
+    <ion-item>
+      <div>
+        {{ m.Tipo }}
+      </div>
+    </ion-item>
+    
+    <ion-item-options>
+      <button ion-button (click)=" buscar(m)">Buscar</button>
+    </ion-item-options>
+  </ion-item-sliding>
+  </div>
+<br>
+   <div>
+    Peliculas
+    <br>
+  <ion-item-sliding *ngFor="let p of peliculas | async">
+    <ion-item>
+      <div>
+        {{ p.Tipo }}
+      </div>
+    </ion-item>
+    
+    <ion-item-options>
+      <button ion-button (click)=" buscar(p)">Buscar</button>
+    </ion-item-options>
+  </ion-item-sliding>
+  </div>
+</ion-list>
+
+</ion-content>
