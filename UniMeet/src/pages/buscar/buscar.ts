@@ -22,6 +22,7 @@ export class Buscar {
   
   } 
 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad Buscar');
   }

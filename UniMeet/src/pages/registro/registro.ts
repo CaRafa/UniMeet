@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Inicio } from "../inicio/inicio";
 
-/**
- * Generated class for the Registro page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-registro',
@@ -19,6 +14,10 @@ export class Registro {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Registro');
+  }
+
+  Aceptar(){
+    this.navCtrl.push(Inicio);
   }
 
 }

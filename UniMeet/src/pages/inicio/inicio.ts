@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Perfil} from '../perfil/perfil';
 import {Pag} from '../pag/pag';
-
+import {Registro} from '../registro/registro';
 
 
 @IonicPage()
@@ -27,5 +27,8 @@ export class Inicio {
   this.navCtrl.push(Pag);
   }
 
+  IrRegistro(){
+    this.navCtrl.push(Registro);
+  }
 
 }
