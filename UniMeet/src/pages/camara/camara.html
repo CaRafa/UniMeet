@@ -5,15 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="tulip">
     <ion-title>
-      Ionic Camera 
+     Subir foto usando la camara 
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <div style="display:flex; flex-direction:column;justify-content:center">
-    <button ion-button (click)="capture()">Lets take a picture!</button>
+    <button ion-button (click)="capture()">Toma una foto</button>
     <img [src]="captureDataUrl" *ngIf="captureDataUrl"/>
+    <button ion-button (click)="upload()" *ngIf="captureDataUrl">Subela a tu perfil</button>
   </div>
 </ion-content>

@@ -2,12 +2,13 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import firebase from 'firebase';
 
 import { ListPage } from '../pages/list/list';
 import { Inicio } from '../pages/inicio/inicio';
 import { Perfil } from '../pages/perfil/perfil';
 import { Buscar } from '../pages/buscar/buscar';
-import { Camara } from '../pages/camara/camara';
+import {Camara} from '../pages/camara/camara';
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,8 +25,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Perfil', component: Perfil },
-      { title: 'Buscar', component: Buscar },
-      {title: 'Camara', component: Camara}
+      { title: 'Buscar', component: Buscar }
     ];
 
   }
@@ -36,6 +36,15 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      const firebaseConfig = {
+          apiKey: "AIzaSyBsJbp7Vq6QxIY5mXv20sBEecwKKebrJD8",
+          authDomain: "unimeet-e0784.firebaseapp.com",
+          databaseURL: "https://unimeet-e0784.firebaseio.com",
+          projectId: "unimeet-e0784",
+          storageBucket: "unimeet-e0784.appspot.com",
+          messagingSenderId: "229117696046"
+      };
+      firebase.initializeApp(firebaseConfig);
     });
   }
 

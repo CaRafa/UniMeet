@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 /**
  * Generated class for the Camara page.
@@ -14,14 +14,17 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class Camara {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, alertCtrl: AlertController) {
+    this.alertCtrl = alertCtrl;
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad Camara');
   }
+  captureDataUrl: string;
+  alertCtrl: AlertController;
  capture (){
     const options: CameraOptions = {
-  quality: 100,
+  quality: 50,
   destinationType: this.camera.DestinationType.DATA_URL,
   encodingType: this.camera.EncodingType.JPEG,
   mediaType: this.camera.MediaType.PICTURE
@@ -29,11 +32,34 @@ export class Camara {
  this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64:
-     let captureDataUrl = 'data:image/jpeg;base64,' + imageData;
+     this.captureDataUrl = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       // Handle error
     });
  }
+ upload (){
+   let storageRef = firebase.storage().ref();
+   //aqui hacemos que el nombre del archivo sea un timestamp
+   const filename = Math.floor(Date.now() / 1000);
+   //hacemos la referencia en firebase
+   const imageRef = storageRef.child('images/${filename}.jpg');
+   imageRef.putString(this.captureDataUrl, firebase.storage.StringFormat.DATA_URL).then((snapshot)=>{
+     //se subioooooo
+     this.showSuccesfulUploadAlert();
+   });
+ }
+ showSuccesfulUploadAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Listo!',
+      subTitle: 'Ya tu foto se subio a Firebase (mas no a tu perfil)',
+      buttons: ['OK']
+    });
+    alert.present();
+
+    // clear the previous photo data in the variable
+    this.captureDataUrl = "";
+  }
+
 
   
 
