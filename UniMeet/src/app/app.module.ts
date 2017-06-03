@@ -5,6 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {Camera} from '@ionic-native/camera';
 
 import { MyApp } from './app.component';
 import { ListPage } from '../pages/list/list';
@@ -17,7 +18,7 @@ import { Pag } from '../pages/pag/pag';
 import { Buscar } from '../pages/buscar/buscar';
 import {Usuarios} from '../pages/usuarios/usuarios';
 import {Perfilamigo} from '../pages/perfilamigo/perfilamigo';
-
+import {Camara} from '../pages/camara/camara';
 export const firebaseConfig = {
     apiKey: "AIzaSyBsJbp7Vq6QxIY5mXv20sBEecwKKebrJD8",
     authDomain: "unimeet-e0784.firebaseapp.com",
@@ -40,8 +41,8 @@ export const firebaseConfig = {
     Pag,
     Buscar,
     Usuarios,
-    Perfilamigo
-
+    Perfilamigo,
+    Camara
 
   ],
   imports: [
@@ -62,11 +63,13 @@ export const firebaseConfig = {
     Pag,
     Buscar,
     Usuarios,
-    Perfilamigo
+    Perfilamigo,
+    Camara
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

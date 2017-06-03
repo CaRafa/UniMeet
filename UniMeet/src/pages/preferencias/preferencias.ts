@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Editarpref} from '../editarpref/editarpref';
-
+import {Camara} from '../camara/camara';
 
 @IonicPage()
 @Component({
@@ -18,7 +18,10 @@ export class Preferencias {
   }
 
   GoToEditarpref(){
-  this.navCtrl.push(Editarpref);
+     this.navCtrl.push(Editarpref);
+  }
+  GoToCamara(){
+     this.navCtrl.push(Camara);
   }
 
 }
