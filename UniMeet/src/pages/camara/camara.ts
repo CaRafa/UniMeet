@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import firebase from 'firebase';
 /**
  * Generated class for the Camara page.
  *
@@ -37,19 +38,8 @@ export class Camara {
       // Handle error
     });
  }
- upload (){
-   let storageRef = firebase.storage().ref();
-   //aqui hacemos que el nombre del archivo sea un timestamp
-   const filename = Math.floor(Date.now() / 1000);
-   //hacemos la referencia en firebase
-   const imageRef = storageRef.child('images/${filename}.jpg');
-   imageRef.putString(this.captureDataUrl, firebase.storage.StringFormat.DATA_URL).then((snapshot)=>{
-     //se subioooooo
-     this.showSuccesfulUploadAlert();
-   });
- }
  showSuccesfulUploadAlert() {
-    let alert = this.alertCtrl.create({
+    const alert = this.alertCtrl.create({
       title: 'Listo!',
       subTitle: 'Ya tu foto se subio a Firebase (mas no a tu perfil)',
       buttons: ['OK']
@@ -59,6 +49,18 @@ export class Camara {
     // clear the previous photo data in the variable
     this.captureDataUrl = "";
   }
+ upload (){
+   const storageRef = firebase.storage().ref();
+   //aqui hacemos que el nombre del archivo sea un timestamp
+   const filename = Math.floor(Date.now() / 1000);
+   //hacemos la referencia en firebase
+   const imageRef = storageRef.child('images/'+filename+'.jpg');
+   imageRef.putString(this.captureDataUrl, firebase.storage.StringFormat.DATA_URL).then((snapshot)=>{
+     //se subioooooo
+     this.showSuccesfulUploadAlert();
+   });
+ }
+ 
 
 
   
