@@ -14,12 +14,14 @@ export class Perfilamigo {
   private key: any;
   nombreamigo: string;
   user: FirebaseListObservable<any>;
+  amigos: FirebaseListObservable<any>;
   useramigo: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public database: AngularFireDatabase) {
     this.amigo = navParams.get('json');
     this.key = this.amigo.$key;
     this.nombreamigo = this.amigo.usuario;
+    this.amigos = this.database.list('/amigos/1');
     this.user = this.database.list('/Usuario/',
     {
       query: {
@@ -34,6 +36,20 @@ export class Perfilamigo {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Perfilamigo');
   }
+  
+  AddFriend(user){
+
+  console.log('add friends blabla bla '+ user);  
+  console.log('amiguitos '+this.amigos);
+
+      this.amigos.push({
+        Nombre: user.Nombre,
+        id: user.$key
+      });
+
+
+  }
+
 
 
 
