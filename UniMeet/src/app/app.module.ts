@@ -21,7 +21,7 @@ import {Usuarios} from '../pages/usuarios/usuarios';
 import {Perfilamigo} from '../pages/perfilamigo/perfilamigo';
 import {Camara} from '../pages/camara/camara';
 import {MisamigosPage} from '../pages/misamigos/misamigos';
-
+import {AmigoPage} from '../pages/amigo/amigo';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBsJbp7Vq6QxIY5mXv20sBEecwKKebrJD8",
@@ -47,7 +47,8 @@ export const firebaseConfig = {
     Usuarios,
     Perfilamigo,
     Camara,
-    MisamigosPage
+    MisamigosPage,
+    AmigoPage
 
   ],
   imports: [
@@ -70,7 +71,9 @@ export const firebaseConfig = {
     Usuarios,
     Perfilamigo,
     Camara,
-    MisamigosPage
+    MisamigosPage,
+    AmigoPage
+
   ],
   providers: [
     StatusBar,
@@ -79,4 +82,5 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
 export class AppModule {}

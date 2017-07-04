@@ -1,0 +1,45 @@
+
+<ion-header>
+
+  <ion-navbar color="tulip">
+    <ion-title> Perfil de {{nombreamigo}} </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div  *ngFor = "let u of user | async">
+  
+  <ion-row>
+  <ion-col text-center>
+    <h3>{{ u.Nombre }} {{ u.Apellido }}</h3>
+  </ion-col>
+  </ion-row>
+<br>
+
+  <ion-row>
+  <ion-col text-center>
+    <h4>Carrera: {{ u.Carrera }}</h4>
+  </ion-col>
+  </ion-row>
+
+  <ion-row>
+  <ion-col text-center>
+     <h4>Edad: {{ u.Edad }}</h4>
+  </ion-col>
+  </ion-row>
+  
+  <ion-row>
+   <ion-col text-center>
+    <button ion-button color="darktulip" (click)="AddFriend(u)">Eliminar Amigo </button> 
+   </ion-col>
+  </ion-row>
+
+  </div>
+
+
+    
+
+</ion-content>

@@ -29,6 +29,7 @@ export class Perfilamigo {
         equalTo: this.key
       }
     });
+    
     console.log(this.key);
     
   }
