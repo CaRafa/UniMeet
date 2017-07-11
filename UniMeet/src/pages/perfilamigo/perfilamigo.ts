@@ -32,35 +32,35 @@ export class Perfilamigo {
     });
 
     if (this.key == 1){
-      this.nombrefoto = "/assets/images/victoria.jpg";
+      this.nombrefoto = "https://i.imgur.com/IoLkAfZ.jpg";
     }
     
     else if(this.key == 2){
-      this.nombrefoto = "/assets/images/rocco.png";
+      this.nombrefoto = "https://i.imgur.com/v5p60RI.png";
     }
 
     else if(this.key == 3){
-      this.nombrefoto = "/assets/images/rafa.png";
+      this.nombrefoto = "https://i.imgur.com/cSDQEJH.png";
     }
 
     else if(this.key == 4){
-      this.nombrefoto = "/assets/images/maria.png";
+      this.nombrefoto = "https://i.imgur.com/xTYpxYd.png";
     }
 
     else if(this.key == 5){
-      this.nombrefoto = "/assets/images/pablo.png";
+      this.nombrefoto = "https://i.imgur.com/KwHJQw7.png";
     }
 
     else if(this.key == 6){
-      this.nombrefoto = "/assets/images/veronica.jpg";
+      this.nombrefoto = "https://i.imgur.com/wN5WMsv.jpg";
     }
 
     else if(this.key == 7){
-      this.nombrefoto = "/assets/images/daniel.jpg";
+      this.nombrefoto = "https://i.imgur.com/EKyQRno.jpg";
     }
 
     else if(this.key == 8){
-      this.nombrefoto = "/assets/images/carla.png";
+      this.nombrefoto = "https://i.imgur.com/dgXVfQH.png";
     }
 
 
