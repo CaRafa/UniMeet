@@ -27,6 +27,7 @@ export class Usuarios {
     console.log(this.key);
     this.usuario = this.database.list('/PreferenciasUsuarios/'+this.key+'/'+this.nombre);
   }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Usuarios');

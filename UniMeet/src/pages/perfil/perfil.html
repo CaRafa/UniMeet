@@ -6,7 +6,7 @@
     <ion-title>Perfil</ion-title>
 
     <ion-buttons  end>
-      <button ion-button secondary >
+      <button ion-button (click)="GoToPref()" secondary >
         <ion-icon name="construct"> </ion-icon> </button>
     </ion-buttons>
   </ion-navbar>
@@ -22,10 +22,10 @@
 
 <ion-row>
   <ion-col text-center>
-    <img src='https://i.imgur.com/jL6zNb1.jpg' />
+    <img src="/assets/images/victoria.jpg" height="180px" width="60%" />
   </ion-col>
 </ion-row>
-
+<br>
 <ion-row>
   <ion-col >
     <h6>Carrera: Ing. Sistemas</h6>
@@ -46,14 +46,10 @@
 
  <br>
  <br> 
+
 <ion-row>
   <ion-col text-center>
-    <button ion-button secondary (click)="GoToPref()"> Ver Preferencias </button> 
-  </ion-col>
-</ion-row>
-<ion-row>
-  <ion-col text-center>
-    <button ion-button secondary (click)="GoToAmis()"> Ver amigos </button> 
+    <button color="tulip" ion-button secondary (click)="GoToAmis()"> Ver amigos </button> 
   </ion-col>
 
 </ion-row>

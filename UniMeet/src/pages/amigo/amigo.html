@@ -10,6 +10,7 @@
 
 <ion-content padding>
 
+
   <div  *ngFor = "let u of user | async">
   
   <ion-row>
@@ -18,6 +19,12 @@
   </ion-col>
   </ion-row>
 <br>
+
+<ion-row>
+  <ion-col text-center>
+    <img src= {{nombrefoto}}  height="180px" width="60%" />
+  </ion-col>
+</ion-row>
 
   <ion-row>
   <ion-col text-center>
@@ -33,7 +40,7 @@
   
   <ion-row>
    <ion-col text-center>
-    <button ion-button color="darktulip" (click)="AddFriend(u)">Eliminar Amigo </button> 
+    <button ion-button color="darktulip"(click)="Eliminar()" >Eliminar Amigo </button> 
    </ion-col>
   </ion-row>
 

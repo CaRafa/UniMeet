@@ -13,6 +13,7 @@ export class Perfilamigo {
   private amigo: any;
   private key: any;
   nombreamigo: string;
+  nombrefoto: string;
   user: FirebaseListObservable<any>;
   amigos: FirebaseListObservable<any>;
   useramigo: any;
@@ -29,7 +30,40 @@ export class Perfilamigo {
         equalTo: this.key
       }
     });
+
+    if (this.key == 1){
+      this.nombrefoto = "/assets/images/victoria.jpg";
+    }
     
+    else if(this.key == 2){
+      this.nombrefoto = "/assets/images/rocco.png";
+    }
+
+    else if(this.key == 3){
+      this.nombrefoto = "/assets/images/rafa.png";
+    }
+
+    else if(this.key == 4){
+      this.nombrefoto = "/assets/images/maria.png";
+    }
+
+    else if(this.key == 5){
+      this.nombrefoto = "/assets/images/pablo.png";
+    }
+
+    else if(this.key == 6){
+      this.nombrefoto = "/assets/images/veronica.jpg";
+    }
+
+    else if(this.key == 7){
+      this.nombrefoto = "/assets/images/daniel.jpg";
+    }
+
+    else if(this.key == 8){
+      this.nombrefoto = "/assets/images/carla.png";
+    }
+
+
     console.log(this.key);
     
   }
@@ -40,13 +74,12 @@ export class Perfilamigo {
   
   AddFriend(user){
 
-  console.log('add friends blabla bla '+ user);  
-  console.log('amiguitos '+this.amigos);
 
       this.amigos.push({
         Nombre: user.Nombre,
         id: user.$key
       });
+
 
 
   }

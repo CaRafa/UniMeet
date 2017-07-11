@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>misamigos</ion-title>
+  <ion-navbar color="tulip">
+    <ion-title>Amigos</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,9 +16,11 @@
 
 <ion-content padding>
 
-
- <h4> Estos son tus amigos </h4>
-
+<ion-row>
+  <ion-col text-center>
+    <h3>Agregados recientemente</h3>
+  </ion-col>
+</ion-row>
 <ion-list >
   <ion-item-sliding *ngFor = "let u of amigos | async"> 
   <ion-item>
